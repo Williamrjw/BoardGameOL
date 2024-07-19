@@ -21,7 +21,13 @@ spring:
     admin:
       client:
         url: http://localhost:${server.port}
-
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Iv23limIgXozZLIDG8bZ
+            clientSecret: 01a86781d5dba25c8f237fbf36b745e6ff27be00
 management:
   endpoints:
     web:
