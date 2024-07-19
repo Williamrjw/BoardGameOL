@@ -1,6 +1,6 @@
 package com.Williamrjw.game.message.common;
 
-import com.Williamrjw.game.common.User;
+import com.Williamrjw.game.common.domain.entity.User;
 import lombok.Builder;
 import lombok.Data;
 
