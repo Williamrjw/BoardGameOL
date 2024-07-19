@@ -16,7 +16,17 @@ server:
       # Tomcat启动初始化的线程数，默认值10
       min-spare: 100
 
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:${server.port}
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 config:
   messaging:
     type: websocket
