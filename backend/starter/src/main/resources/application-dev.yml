@@ -1,0 +1,18 @@
+config:
+  db:
+    dbname: game
+    url: localhost:3306
+    username: root
+    password: Root@123
+    fullurl: jdbc:mysql://${config.db.url}/${config.db.dbname}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    driver: com.mysql.cj.jdbc.Driver
+  github:
+    clientId: Iv23limIgXozZLIDG8bZ
+    clientSecret: 01a86781d5dba25c8f237fbf36b745e6ff27be00
+  messaging:
+    type: websocket
+    websocket:
+      url: ws://localhost:8080/messaging
+      connectTimeout: 5000
+      reconnectAttempts: 3
+      reconnectInterval: 10000
