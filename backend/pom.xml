@@ -10,6 +10,7 @@
         <module>starter</module>
         <module>message</module>
         <module>common</module>
+        <module>system</module>
     </modules>
 
     <name>backend</name>
@@ -60,6 +61,12 @@
             <dependency>
                 <groupId>com.Williamrjw.game</groupId>
                 <artifactId>common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 系统配置中心-->
+            <dependency>
+                <groupId>com.Williamrjw.game</groupId>
+                <artifactId>system</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
