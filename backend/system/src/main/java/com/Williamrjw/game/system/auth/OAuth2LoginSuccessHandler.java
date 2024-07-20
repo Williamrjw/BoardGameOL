@@ -2,6 +2,8 @@ package com.Williamrjw.game.system.auth;
 
 import com.Williamrjw.game.common.domain.entity.User;
 import com.Williamrjw.game.common.user.LoginUser;
+import com.Williamrjw.game.common.user.UserServiceImpl;
+import com.Williamrjw.game.common.utils.SecurityUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -26,6 +28,9 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
     TokenService tokenService;
 
     @Autowired
+    UserServiceImpl userService;
+
+    @Autowired
     TokenProperties properties;
 
     @Override
@@ -39,6 +44,12 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
                 .email(oAuth2User.getAttribute("email"))
                 .build();
         // TODO 还未做权限标识
+        User localUser = userService.getUserByUsername(user.getUsername());
+        if(localUser==null){
+            log.info("新增github用户【{}】",user.getUsername());
+            user.setPassword(SecurityUtils.encryptPassword("123456"));
+            userService.save(user);
+        }
         LoginUser loginUser = new LoginUser(user,new HashSet<>());
         log.info("用户【{}】登录成功",loginUser.getUsername());
         // 生成token
