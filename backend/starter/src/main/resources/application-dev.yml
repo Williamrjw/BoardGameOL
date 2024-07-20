@@ -16,3 +16,11 @@ config:
       connectTimeout: 5000
       reconnectAttempts: 3
       reconnectInterval: 10000
+  redis:
+    url: localhost
+    port: 6379
+    password:
+  token:
+    key: admin-token
+    secret: abcdefghijklmnopqrstuvwxyz
+    expireTime: 30
