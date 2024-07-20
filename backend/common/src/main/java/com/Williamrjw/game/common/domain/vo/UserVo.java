@@ -1,6 +1,6 @@
 package com.Williamrjw.game.common.domain.vo;
 
-import com.Williamrjw.game.common.core.IVoMapper;
+import com.Williamrjw.game.common.IVoMapper;
 import com.Williamrjw.game.common.domain.entity.User;
 import lombok.Data;
 import org.mapstruct.Mapper;

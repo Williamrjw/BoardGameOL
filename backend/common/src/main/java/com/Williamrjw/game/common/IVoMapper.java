@@ -1,4 +1,4 @@
-package com.Williamrjw.game.common.core;
+package com.Williamrjw.game.common;
 
 import java.util.List;
 
